@@ -49,12 +49,14 @@ git push -u origin dev-foo
    
    What happens when you `push` your changes?    
    Explain why and how to fix it.
+   >It will create conflict. 
+   >To fix this, you must update your master branch on local and merge it with edited local README.md file
 
 
 
 7. The command to change the URL of the remote "origin" to a new URL, such as `https://hostname/newuser/new-repo-name`, is:
    ```
-   TODO your answer
+   git remote set-url
    ```
    This situation occurs when:
    - you change the name of a repo on Github
@@ -65,11 +67,14 @@ git push -u origin dev-foo
 
 8. To create a *second* remote repository for your local repo, the command to add a remote named "bitbucket" with the URL "https://bitbucket.org/your-username/git-commands" is:
    ```
-   todo your answer
+   git remote add bitbucket https://bitbucket.org/your-username/git-commands
    ```
    - Note: you must **create** an empty repo on Bitbucket. This command just adds it as a remote, it won't create the remote repo.
 
 
 9. After adding the remote named `bitbucket`, the command to push your master branch to `bitbucket` is:
+   ```
+   git push origin bitbucket:master
+   ```
 
 
