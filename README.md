@@ -38,21 +38,20 @@ In this file, directory paths are written with a forward slash as on MacOS, Linu
 ## Basics
 
 1. When using Git locally, what are these?  Define each one in a sentence
-   * Staging area -
-   * Working copy -
-   * master -
-   * HEAD -
+   * Staging area - area that store edited file
+   * Working copy - the place that git already tracked the file
+   * master - the main branch that store the file remotely
+   * HEAD - the place where file is ready to push to master
 
 2. When you install git on a new machine (or in a new user account) you should perform these 2 git commands to tell git your name and email.  These values are used in commits that you make:
    ```
-   # Git configuration commands for a new account
-
-
+   git config user.name
+   git config user.email
    ```
 
 3. There are 2 ways to create a local Git repository.  Briefly descibe each one:
-   - todo: describe first way to create a local repo
-   - todo: describe second way to create a local repo
+   - turn a local directory that is not under version control into a Git repository
+   - clone an existed Git repository from other places
 
 
 ## Adding and Changing Things
@@ -73,17 +72,18 @@ test/
 
 1. Add README.md and *everything* in the `src` directory to the git staging area.
    ```
-   todo  your answer here
+   git add README.md
+   git add src/*
    ```
 
 2. Add `test/test_a.py` to the staging area (but not any other files).
    ```
-   todo  your answer
+   git add test/test_a.py
    ```
 
 3. List the names of files in the staging area.
    ```
-   todo  your answer
+   git status
    ```
 
 4. Remove `README.md` from the staging area. This is **very useful** if you accidentally add something you don't want to commit.
@@ -93,19 +93,19 @@ test/
 
 5. Commit everything in the staging area to the repository.
    ```
-   todo  your answer
+   git commit
    ```
 
 6. In any project, there are some files and directories that you **should not** commit to git.    
    For a Python project, name *at least* files or directories that you should not commit to git:
-   - 
-   - 
-   -
+   - pycache
+   - .env file
+   - .idea\
 
 
 7. Command to move all the .py files from the `src` dir to the top-level directory of this repository. This command moves them in your working copy *and* in the git repo (when you commit the change):
    ```
-
+   git mv src/*.py .
    ```
 
 
