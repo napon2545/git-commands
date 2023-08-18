@@ -224,7 +224,7 @@ test/
 * [Visual Git Reference](https://marklodato.github.io/visual-git-guide) one page with illustrations of git commands.
 * [Markdown Cheatsheet][markdown-cheatsheet] summary of Markdown commands.
 * [Github Markdown][github-markdown] some differences in the way Github handles markdown and special Markdown for repos.
-* [Git Cheatsheet] [git-cheatsheet] Contain all important git command you need to know in 2 pages
+* [Git Cheatsheet][git-cheatsheet] Contain all important git command you need to know in 2 pages
 
 Learn Git Visually:
 
