@@ -1,5 +1,3 @@
-
-**TODO**: Delete these instructions before you submit your work.
 ## Instructions
 
 1. Read Chapters 2 & 3 of [Pro Git][ProGit]. The chapters are short.
@@ -17,7 +15,6 @@
 5. **Test that your answers are correct!** There is **no excuse** for incorrect answers since you can test your answers by experimentation.      
 6. Verify that your Markdown formatting is correct -- points deducted for bad formatting. VS Code and IntelliJ have markdown previewers. You should also preview it on Github, since Github Markdown is a bit non-standard.
 
-**TODO**: Delete these instructions before you submit your work. Points deducted for each "TODO" in this file.
 
 ## Using Git
 
@@ -68,7 +65,6 @@ test/
     test_a.py
     ...
 ```     
-> TODO: Write the git command to perform each of these:
 
 1. Add README.md and *everything* in the `src` directory to the git staging area.
    ```
@@ -88,7 +84,7 @@ test/
 
 4. Remove `README.md` from the staging area. This is **very useful** if you accidentally add something you don't want to commit.
    ```
-   todo  your answer
+   git restore --staged README.md
    ```
 
 5. Commit everything in the staging area to the repository.
@@ -110,39 +106,48 @@ test/
 
 
 8. In this repository, create your own `.gitignore` file that you can reuse in other Python projects.  Add everything that you think is relevant.    
-   *Hint:* A good place to start is to create a new repo on Github and during the creation dialog, ask Github to make a .gitignore for Python projects. Then edit it.  Don't forget to include pytest output and MacOS junk.
-
+   *Hint:* A good place to start is to create a new repo on Github and during the creation dialog, ask Github to make a .gitignore for Python projects. Then edit it.  Don't forget to include pytest output and MacOS junk.\
+    Done
 
 
 ## Undo Changes and Recover Files
 
-> TODO: enter the git command to do each of these
-> For questions where you are showing a command, use triple-backquote marks (as above) so the text is formatted as code.
-
-1.  Display the differences between your *working copy* of `a.py` and the `a.py` in the *local repository* (HEAD revision):
-
+1. Display the differences between your *working copy* of `a.py` and the `a.py` in the *local repository* (HEAD revision):
+```
+   git diff a.py
+```
 
 2. Display the differences between your *working copy* of `a.py` and the version in the *staging area*. (But, if a.py is not in the staging area this will compare working copy to HEAD revision):
-
+   ```
+   git diff --staged a.py
+   ```
 3. **View changes to be committed:** Display the differences between files in the staging area and the versions in the repository. (You can also specify a file name to compare just one file.) 
-
+   ```
+   git diff --staged
+   ```
 
 4. **Undo "git add":** If `main.py` has been added to the staging area (`git add main.py`), remove it from the staging area:
-
+   ```
+   git reset main.py
+   ```
 
 5. **Recover a file:** Command to replace your working copy of `a.py` with the most recent (HEAD) version in the repository.  This also works if you have deleted your working copy of this file.
-
+   ```
+   git restore a.py
+   ```
 
 6. **Undo a commit:** Suppose you want to discard some commit(s) and move both HEAD and "master" to an earlier revision (an earlier commit)  Suppose the git commit graph looks like this (`aaaa`, etc, are the commit ids)
    ```
    aaaa ---> bbbb ---> cccc ---> dddd [HEAD -> master]
    ``` 
    The command to reset HEAD and master to the commit id `bbbb`:
-
+   ```
+   git reset --hard bbbb
+   ```
 
 7. **Checkout old code:** Using the above example, the command to replace your working copy with the files from commit with id `aaaa`:
    ```
-   todo your answer here
+   git checkout aaaa
    ```
     Note:
     - Git won't let you do this if you have uncommitted changes to any "tracked" files.
@@ -159,13 +164,13 @@ test/
 
 2. Show the history (as above) including *all* branches in the repository and include a graph connecting the commits:
    ```
-
+   git log --oneline --graph
    ```
 
 
 3. List all the files in the current branch of the repository:
    ```
-   todo your answer
+   git log --name-only --pretty=format:
    ```
    Example output:
    ```
@@ -180,25 +185,46 @@ test/
 
 ## Branch and Merge
 
-**TODO**: This section is free-form.  Create 4 numbered items for common branch-and-merge tasks you would like to remember and show the git command to do each one. (You are write *more* than 4 if you want.)
-
-
-
+1. Creating a New Branch:
+   ```
+   git checkout -b new-branch
+   ```
+2. **Merging a Branch:** merge the wanted branch into a main branch
+   ```
+   git checkout main
+   git merge new-branch
+   ```
+3. Viewing Branches:
+   ```
+   git branch
+   ```
+4. **Deleting a Branch:** delete the unwanted branch(for example, when you finish merging it with the main branch)
+   ```
+   git branch -d new-branch
+   ```
 ## Favorites
-
-> TODO: Describe *at least* 1 task that you would like to remember, and the git command(s) to do it.
-
-
+### Updating Local Branch with Remote Changes
+1. fetch the latest change from remote repository.
+   ```
+   git fetch origin
+   ```
+2. Merge the fetched change into local repository
+   ```
+   git merge origin
+   ```
+   Or you can just use pull command to do fetch and merge in one go
+   ```
+   git pull origin main
+   ```
 
 ---
 ## Resources
-
-> TODO: Add your favorite Git resources (at least 1)
 
 * [Pro Git Online Book][ProGit] Chapters 2 & 3 contain the essentials. Downloadable e-book is available, too. 
 * [Visual Git Reference](https://marklodato.github.io/visual-git-guide) one page with illustrations of git commands.
 * [Markdown Cheatsheet][markdown-cheatsheet] summary of Markdown commands.
 * [Github Markdown][github-markdown] some differences in the way Github handles markdown and special Markdown for repos.
+* [Git Cheatsheet] [git-cheatsheet] Contain all important git command you need to know in 2 pages
 
 Learn Git Visually:
 
@@ -211,3 +237,4 @@ Learn Git Visually:
 [VisualizeGit]: http://git-school.github.io/visualizing-git/ "Online tools draws a graph of commits in a repo as you type"
 [markdown-cheatsheet]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 [github-markdown]: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+[git-cheatsheet]: https://education.github.com/git-cheat-sheet-education.pdf
