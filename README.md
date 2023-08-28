@@ -35,10 +35,10 @@ In this file, directory paths are written with a forward slash as on MacOS, Linu
 ## Basics
 
 1. When using Git locally, what are these?  Define each one in a sentence
-   * Staging area - area that store edited file
-   * Working copy - the place that git already tracked the file
-   * master - the main branch that store the file remotely
-   * HEAD - the place where file is ready to push to master
+   * Staging area - Area that files are prepared for next commit
+   * Working copy - The local directory where you edit and modify files before committing changes to the repository
+   * master - the main branch in Git repositories
+   * HEAD - lastest commit in the current branch
 
 2. When you install git on a new machine (or in a new user account) you should perform these 2 git commands to tell git your name and email.  These values are used in commits that you make:
    ```
@@ -47,7 +47,7 @@ In this file, directory paths are written with a forward slash as on MacOS, Linu
    ```
 
 3. There are 2 ways to create a local Git repository.  Briefly descibe each one:
-   - turn a local directory that is not under version control into a Git repository
+   - initialize new repository
    - clone an existed Git repository from other places
 
 
@@ -170,7 +170,7 @@ test/
 
 3. List all the files in the current branch of the repository:
    ```
-   git log --name-only --pretty=format:
+   git ls-tree --name-only HEAD
    ```
    Example output:
    ```
